@@ -95,17 +95,18 @@ report_dir=os.path.join(reports_dir,"report.html")
 #（2）ddt修改源码：在pip官网下载ddt->修改源代码->重命名ddt_new->可将ddt_放在python的lib目录下，或放在libtex下，使用
 # from libtex import ddt_new（HTMLTestRunnerNew同理）
 #（3）__dict__的使用：对象.__dict__可以字典形式展示所有实例的属性;类.__dict__可以字典形式获取类属性和方法
-#（4）使用git上传代码到jenkens
-#（5）Jenkins讲解与使用：基于Java开发的一种持续集成工具，用于监控持续重复的工作
+#（4）Jenkins讲解与使用：基于Java开发的一种持续集成工具，用于监控持续重复的工作
 #1）一般公司将源代码放在Git或svn上，然后再从Git或svn上传到jenkins
+#####看博客安装git,并将代码从git上传到GitHub的代码仓
 #2）jenkins端口被占用时，修改端口：jenkins->jenkins.xml中修改
 #3)权限弄乱的时候，结果自己无法修改，可进入jenkins->config中删除authorizationStrategy
 #4）插件安装：
 # 在线插件：svn-安装Subversion Plug-in；git-安装Git;邮箱-安装Email Extension Plugin；管理生成的报表-安装HTML Publisher plugin）
 #在线安装失败，去jenkins官网下载.hpi格式文件，浏览选择上传
-#5）新建任务：
+#5）全局工具配置：设置好git.exe的安装路径D:\Program Files\Git\bin\git.exe
+#6）新建任务：
 #General:勾选“丢弃旧的构建”，可设置保存天数
-#source code management:配置git或svn拉取代码，或者不配置直接将代码放在workspace下
+#source code management:配置git或svn拉取代码(输入github代码地址并添加GitHub用户名)，或者不配置直接将代码放在workspace下
 #Build Triggers:所有选项都不选，默认手动点击“立即构建”触发
 #Build Environment：默认不选
 #Build：运行方式选择，windows系统选择“执行Windows批命令”，输入“python test_cases\run_test.py”
